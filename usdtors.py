@@ -1,14 +1,18 @@
-
 USD_TO_INR = 83
 
 def convert_to_inr(products):
-
-    return list(map(lambda p: (p[0], p[1] * USD_TO_INR), products))
+    converted = []
+    for name, price in products:
+        converted.append((name, price * USD_TO_INR))
+    return converted
 
 
 def filter_expensive_products(products_in_inr, threshold=3000):
-
-    return list(filter(lambda p: p[1] > threshold, products_in_inr))
+    expensive = []
+    for name, price in products_in_inr:
+        if price > threshold:
+            expensive.append((name, price))
+    return expensive
 
 
 def main():
