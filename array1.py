@@ -21,3 +21,4 @@ for i in range(n):
     books.append(BookStore(title,author,qty,price))
 for book in books:
     print(book.title,book.author,book.qty,book.price)
+    #book.get_data()
